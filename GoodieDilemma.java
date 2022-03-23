@@ -16,7 +16,7 @@ class Item {
 
 public class GoodieDilemma {
   public static void main(String[] args) throws Exception {
-    FileInputStream fis=new FileInputStream("C:\\ssjava\\HighPeak\\input.txt");       
+    FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"//input.txt");     
     Scanner sc=new Scanner(fis);
     int number_of_employees = Integer.parseInt(sc.nextLine().split(": ")[1]);
     sc.nextLine(); sc.nextLine(); sc.nextLine();
@@ -47,7 +47,7 @@ public class GoodieDilemma {
       }
     }
     
-    FileWriter fw = new FileWriter("C:\\ssjava\\HighPeak\\output.txt");
+    FileWriter fw = new FileWriter(System.getProperty("user.dir") + "//output.txt");
     fw.write("The goodies selected for distribution are:\n\n");
     for(int i=min_index;i<min_index + number_of_employees; i++) {
       fw.write(goodies_items.get(i).toString() + "\n");
